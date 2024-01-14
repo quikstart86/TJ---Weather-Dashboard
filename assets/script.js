@@ -1,57 +1,108 @@
-const defaultCity = `london`;
+const defaultCity = `London`;
 const defaultUnits = `metric`;
 const apiKey = `e0fceb01398f5422268df38928be67d4`;
-const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${defaultCity}&appid=${apiKey}&units=${defaultUnits}`;
 
+
+const searchInput = $(`#search-input`);
+const searchBtn = $(`#search-button`);
 console.log(apiKey);
 
 // new
 let savedSearches = JSON.parse(localStorage.getItem(`savedSearches`)) || [];
 
 function displayTime() {
-    $(`#TimeNow`).text(dayjs().format(`dddd, MMMM D, YYYY`))
-    $(`#dateNow`).text(dayjs().format(`HH:mm A`))
+  $(`#TimeNow`).text(dayjs().format(`dddd, MMMM D, YYYY`))
+  $(`#dateNow`).text(dayjs().format(`HH:mm A`))
 }
 
 // update every second
 setInterval(displayTime, 1000)
 
-fetch(queryURL)
-  .then(function (response) {
-    // Calling .json() to access the json data stored inside the returned promise
-    return response.json();
-  })
-  // We store all of the retrieved data inside of an object called "data"
-  .then(function (data) {
-    // Log the queryURL
-    console.log(queryURL);
+getCurrentWeather(defaultCity);
 
-    // Log the entire response object
-    console.log(data);
+function getCurrentWeather(city) {
+  const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${defaultUnits}`;
+  fetch(queryURL)
+    .then(function (response) {
+      // Calling .json() to access the json data stored inside the returned promise
+      return response.json();
+    })
+    // We store all of the retrieved data inside of an object called "data"
+    .then(function (data) {
+      // Log the queryURL
+      console.log(queryURL);
 
-    savedSearches.push(defaultCity);
+      // Log the entire response object
+      console.log(data);
+      if (!savedSearches.includes(data.name)) {
 
-    localStorage.setItem(`savedSearches`, JSON.stringify(savedSearches));
-    displaySavedSearches();
-  });
+        savedSearches.push(data.name);
 
-  function displaySavedSearches() {
-    const $savedSearchList = $('#savedSearchList');
-    $savedSearchList.empty(); // Clear previous searches
+        localStorage.setItem(`savedSearches`, JSON.stringify(savedSearches));
+        displaySavedSearches();
+      }
+      $(`#today`).html(`<div class="card col-sm-10">
+      <div class="card-body">
+        <h5 class="card-title">${data.name}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">${new Date(data.dt * 1000).toLocaleDateString()}</h6>
+        <p class="card-text">Condition ${data.weather[0].description}</p>
+        <p class="card-text">Temp ${data.main.temp}C°</p>
+        <p class="card-text">Humidity ${data.main.humidity}C°</p>
+        <p class="card-text">Wind Speed ${data.wind.speed}</p>
 
-    savedSearches.forEach(function (city) {
-        $savedSearchList.append(`<button>${city}</button>`);
+      </div>
+    </div>`)
+    });
+}
+function getForecast(city) {
+  const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${defaultUnits}`;
+  fetch(queryURL)
+    .then(function (response) {
+      // Calling .json() to access the json data stored inside the returned promise
+      return response.json();
+    })
+    // We store all of the retrieved data inside of an object called "data"
+    .then(function (data) {
+      // Log the queryURL
+      console.log(queryURL);
+
+      // Log the entire response object
+      console.log(data);
+
+      //       $(`#forecast`).append(`<div class="">`);
+      // <div class="card-body">
+      //         <h5 class="card-title">${data.name}</h5>
+      //         <h6 class="card-subtitle mb-2 text-body-secondary">${new Date(data.dt*1000).toLocaleDateString()}</h6>
+      //         <p class="card-text">Condition ${data.weather[0].description}</p>
+      //         <p class="card-text">Temp ${data.main.temp}C°</p>
+      //         <p class="card-text">Humidity ${data.main.humidity}C°</p>
+      //         <p class="card-text">Wind Speed ${data.wind.speed}</p>
+
+      //       </div>
+
+      if (!savedSearches.includes(data.city.name)) {
+
+        savedSearches.push(data.city.name);
+
+        localStorage.setItem(`savedSearches`, JSON.stringify(savedSearches));
+        displaySavedSearches();
+      }
     });
 }
 
+searchBtn.on(`click`, function (e) {
+  e.preventDefault()
+  getCurrentWeather(searchInput.val());
 
-// Load a home screen with local weather set to london (4/5days)
-// able to search for other cities in a search bar
-// save searched cities to local storage
-// clear all search items
+  getForecast(searchInput.val())
+})
+function displaySavedSearches() {
+  const $savedSearchList = $('#history');
+  $savedSearchList.empty(); // Clear previous searches
 
+  savedSearches.forEach(function (city) {
+    $savedSearchList.append(`<button class="col-sm-12 mb-2">${city}</button>`);
+  });
+}
+displaySavedSearches();
 
-  // Load a home screen with local weather set to london (4/5days)
-  // able to search for other cities in a search bar
-  // save seached cities to local storage
-  // clear all search items

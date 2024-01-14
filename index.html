@@ -36,17 +36,21 @@
                                 </button>
                                 <hr class="hr weather-hr" />
                             </div>
-                            <!-- section for adding saved searches to local storage and append as li element -->
-                            <button id="savedSearchList"></button>
+                            
                         </div>
                     </div>
                 </form>
+                <!-- section for adding saved searches to local storage and append as li element -->
                 <div class="list-group" id="history"></div>
             </aside>
 
-            <div class="col-lg-9 pb-3 weatherToday">
-                <section id="today" class="mt-3" role="region" aria-live="polite"></section>
-                <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
+            <div class="col-lg-9 pb-3">
+                <section id="today" class="mt-3 row" role="region" aria-live="polite">
+
+                </section>
+                <section id="forecast" class="row mt-3" role="region" aria-live="polite">
+
+                </section>
             </div>
         </div>
     </div>
@@ -54,7 +58,8 @@
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- my script js file -->
     <script src="./assets/script.js"></script>
