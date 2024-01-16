@@ -5,10 +5,14 @@ const apiKey = `e0fceb01398f5422268df38928be67d4`;
 
 const searchInput = $(`#search-input`);
 const searchBtn = $(`#search-button`);
-console.log(apiKey);
+
 
 // new
 let savedSearches = JSON.parse(localStorage.getItem(`savedSearches`)) || [];
+
+if (!Array.isArray(savedSearches)) {
+  savedSearches = [];
+}
 
 function displayTime() {
   $(`#TimeNow`).text(dayjs().format(`dddd, MMMM D, YYYY`))
@@ -31,7 +35,7 @@ function getCurrentWeather(city) {
 getCurrentWeather(defaultCity);
 
 // function to get 5 day forecast api
-function get5DayForecast(city) {
+function getFiveDayForecast(city) {
   const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${defaultUnits}`;
   fetchWeatherData(queryURL, 'forecastList');
 }
@@ -54,7 +58,7 @@ function fetchWeatherData(queryURL, containerId) {
       if (containerId === 'today') {
         displayCurrentWeather(data);
       } else if (containerId === 'forecastList') {
-        display5DayForecast(data);
+        displayFiveDayForecast(data);
       }
     });
 }
@@ -76,7 +80,7 @@ function displayCurrentWeather(data) {
   </div>`);
 }
 
-function display5DayForecast(data) {
+function displayFiveDayForecast(data) {
   const forecastList = $('#forecastList');
   forecastList.empty();
 
@@ -103,7 +107,7 @@ searchBtn.on(`click`, function (e) {
   e.preventDefault();
   const city = searchInput.val();
   getCurrentWeather(city);
-  get5DayForecast(city);
+  getFiveDayForecast(city);
 });
 
 function displaySavedSearches() {
