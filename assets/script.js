@@ -69,16 +69,7 @@ function getForecast(city) {
       // Log the entire response object
       console.log(data);
 
-      //       $(`#forecast`).append(`<div class="">`);
-      // <div class="card-body">
-      //         <h5 class="card-title">${data.name}</h5>
-      //         <h6 class="card-subtitle mb-2 text-body-secondary">${new Date(data.dt*1000).toLocaleDateString()}</h6>
-      //         <p class="card-text">Condition ${data.weather[0].description}</p>
-      //         <p class="card-text">Temp ${data.main.temp}C°</p>
-      //         <p class="card-text">Humidity ${data.main.humidity}C°</p>
-      //         <p class="card-text">Wind Speed ${data.wind.speed}</p>
 
-      //       </div>
 
       if (!savedSearches.includes(data.city.name)) {
 
