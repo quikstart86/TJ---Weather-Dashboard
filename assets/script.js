@@ -36,10 +36,6 @@ function get5DayForecast(city) {
   fetchWeatherData(queryURL, 'forecastList');
 }
 
-// calling the function
-get5DayForecast(defaultCity);
-
-// function to extract weather data into JSON
 function fetchWeatherData(queryURL, containerId) {
   fetch(queryURL)
     .then(function (response) {
@@ -63,16 +59,19 @@ function fetchWeatherData(queryURL, containerId) {
     });
 }
 
-// function to add current weather to the current weather section
 function displayCurrentWeather(data) {
+  const iconCode = data.weather[0].icon;
+  const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
+
   $(`#today`).html(`<div class="card col-sm-10">
     <div class="card-body">
       <h5 class="card-title">${data.name}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">${new Date(data.dt * 1000).toLocaleDateString()}</h6>
-      <p class="card-text">Condition ${data.weather[0].description}</p>
-      <p class="card-text">Temp ${data.main.temp}C°</p>
-      <p class="card-text">Humidity ${data.main.humidity}C°</p>
-      <p class="card-text">Wind Speed ${data.wind.speed}</p>
+      <img src="${iconUrl}" alt="Weather Icon">
+      <p class="card-text">Condition: ${data.weather[0].description}</p>
+      <p class="card-text">Temperature: ${data.main.temp}°C</p>
+      <p class="card-text">Humidity: ${data.main.humidity}%</p>
+      <p class="card-text">Wind Speed: ${data.wind.speed} m/s</p>
     </div>
   </div>`);
 }
@@ -84,13 +83,17 @@ function display5DayForecast(data) {
   // Loop through the 5-day forecast data
   for (let i = 0; i < data.list.length; i += 8) {
     const forecastData = data.list[i];
+    const iconCode = forecastData.weather[0].icon;
+    const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
+
     forecastList.append(`<div class="card col-sm-2">
       <div class="card-body">
         <h5 class="card-title">${new Date(forecastData.dt * 1000).toLocaleDateString()}</h5>
-        <p class="card-text">Condition ${forecastData.weather[0].description}</p>
-        <p class="card-text">Temp ${forecastData.main.temp}C°</p>
-        <p class="card-text">Humidity ${forecastData.main.humidity}C°</p>
-        <p class="card-text">Wind Speed ${forecastData.wind.speed}</p>
+        <img src="${iconUrl}" alt="Weather Icon">
+        <p class="card-text">Condition: ${forecastData.weather[0].description}</p>
+        <p class="card-text">Temperature: ${forecastData.main.temp}°C</p>
+        <p class="card-text">Humidity: ${forecastData.main.humidity}%</p>
+        <p class="card-text">Wind Speed: ${forecastData.wind.speed} m/s</p>
       </div>
     </div>`);
   }
