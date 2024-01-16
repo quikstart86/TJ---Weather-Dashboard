@@ -120,3 +120,8 @@ function displaySavedSearches() {
 }
 
 displaySavedSearches();
+
+$(`#clearAllBtn`).on(`click`, function () {
+  localStorage.clear()
+  document.location.reload();
+})
