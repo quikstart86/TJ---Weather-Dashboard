@@ -114,8 +114,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## [Badges](#badges)
 
 ![Static Badge](https://img.shields.io/badge/JavaScript_50%25-orange)
-![Static Badge](https://img.shields.io/badge/HTML_25%25-blue)
-![Static Badge](https://img.shields.io/badge/CSS_25%25-Green)
+![Static Badge](https://img.shields.io/badge/HTML_5%25-blue)
+![Static Badge](https://img.shields.io/badge/CSS_10%25-Green)
+![Static Badge](https://img.shields.io/badge/jQuery_25%25-yellow)
+![Static Badge](https://img.shields.io/badge/Bootstrap_10%25-purple)
 
 ## [Features](#features)
 
