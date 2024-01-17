@@ -44,15 +44,15 @@ Satisfies all of the above acceptance criteria plus the following:
 
 ## [Mock-Up](#mock-up)
 
-![portfolio demo](./assets/images/scheduler%20demo.gif)
+![portfolio demo](./assets)
 
-[Live View](./assets/images/scheduler%20demo.gif)
+[Live View](./assets)
 <br>
-[Static View](./assets/images/dayscheduler.png)
+[Static View](./assets)
 <br>
-[Deployed Application](https://quikstart86.github.io/TJ---Work-Day-Scheduler/)
+[Deployed Application](https://quikstart86.github.io/TJ-Weather-Dashboard/)
 <br>
-[GitHub project repo](https://github.com/quikstart86/TJ---Work-Day-Scheduler)
+[GitHub project repo](https://github.com/quikstart86/TJ-Weather-Dashboard)
 
 ## [Installation](#installation)
 
