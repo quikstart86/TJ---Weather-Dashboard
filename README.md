@@ -1,112 +1,134 @@
 # TJ---Weather-Dashboard
 
+## [Description](#description)
 
-# Module 8 Server-Side APIs: Weather Dashboard
+This challenge required us to create a 5 day weather app application that allows a user to search for cities and return the weather for the day and the next five. Provided with basic starter code for the HTML and CSS. This app will run in the browser and feature dynamically updated HTML/CSS/JS powered by Bootstrap, jQuery and Dayjs plugin.
 
-## Your Task
+## [Table of Contents](#table-of-contents)
 
-Server APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+* [Description](#descrition)
+* [Acceptance Criteria](#acceptance-criteria)
+* [Mock-Up](#mock-up)
+* [Installation](#installation)
+* [Credits](#credits)
+* [License](#license)
+* [Badges](#badges)
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The link should take you to a guide on how to use the 5 Day Forecast API. You will need to register for an API key in order to use this API. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
+## [Acceptance Criteria](#acceptance-criteria)
 
-The base URL for your API calls should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`.
+Here are the critical requirements necessary to develop a weather dashboard that satisfies a typical hiring manager’s needs:
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
-
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
-
-## User Story
-
-```text
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
-
-## Acceptance Criteria
-
-- Create a weather dashboard with form inputs.
-  - When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
-  - When a user views the current weather conditions for that city they are presented with:
+* Create a weather dashboard with form inputs.
+* When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
+* When a user views the current weather conditions for that city they are presented with:
     - The city name
     - The date
     - An icon representation of weather conditions
     - The temperature
     - The humidity
     - The wind speed
-  - When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
+* When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
     - The date
     - An icon representation of weather conditions
     - The temperature
     - The humidity
-  - When a user click on a city in the search history they are again presented with current and future conditions for that city
+* When a user click on a city in the search history they are again presented with current and future conditions for that city* Persist events between refreshes of a page
 
-## Mock-Up
+### Technical Acceptance Criteria:
 
-The following image shows the web application's appearance and functionality:
+Satisfies all of the above acceptance criteria plus the following:
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](./assets/images/10-server-side-apis-challenge-demo.png)
+* Uses the OpenWeather API to retrieve weather data.
 
-## Grading Requirements
+* Uses `localStorage` to store persistent data.
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> - A repository that has no code
->
-> - A repository that includes a unique name but nothing else
->
-> - A repository that includes only a README file but nothing else
->
-> - A repository that only includes starter code
+## [Mock-Up](#mock-up)
 
-This Challenge is graded based on the following criteria:
+![portfolio demo](./assets/images/scheduler%20demo.gif)
 
-### Technical Acceptance Criteria: 40%
+[Live View](./assets/images/scheduler%20demo.gif)
+<br>
+[Static View](./assets/images/dayscheduler.png)
+<br>
+[Deployed Application](https://quikstart86.github.io/TJ---Work-Day-Scheduler/)
+<br>
+[GitHub project repo](https://github.com/quikstart86/TJ---Work-Day-Scheduler)
 
-- Satisfies all of the above acceptance criteria plus the following:
+## [Installation](#installation)
 
-  - Uses the OpenWeather API to retrieve weather data.
+I started by creating a new repo on GitHub giving it a unique name and then cloning it to my local environment using GitBash. I then created several files including one for HTML/CSS/JS and an assets folder. I created an index.html / script.js / style.css file in gitbash using 'touch' and then began to work through the files. Coding in HTML first to create the structure, and then once sufficiently built out, I proceeded to work on the JavaScript and CSS. With any new major features/changes to the the code I added (git add -A) the changes, committed the changes (git commit -m " ") and then pushed them up to my remote repo on GitHub (git push origin).
 
-  - Uses `localStorage` to store persistent data.
+## [Credits](#credits)
 
-### Deployment: 32%
+Starter Code provided by edX Boot Camps LLC.
+<br>
+Code modified and developed by Thomas Jack
 
-- Application deployed at live URL.
+**Support and mentoring from course mentors:**
+<br>
+Bobbi Tarkanay (1:1 - mentoring) - https://github.com/bltarkany
 
-- Application loads with no errors.
+**Peer Study Group Support:**
+<br>
+Georgie Lillington
+<br>
+Matt Dudman
 
-- Application GitHub URL submitted.
+**Supporting links:** <br>
+[Wesbos.com](https://courses.wesbos.com/account/access/5de174daa0fbbc5276b71ef7/view/375483126)
+<br>
+[Udemy.com](https://www.udemy.com/course/the-complete-javascript-course/)
+<br>
+[W3Schools](https://www.w3schools.com/js/default.asp)
+<br>
+[jQuery](https://jqueryui.com/datepicker/#dropdown-month-year)
+<br>
+[Day.js](https://day.js.org/)
+<br>
+[Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+<br>
+[Fontawesome](https://fontawesome.com/)
 
-- GitHub repository that contains application code.
+[YouTube](https://www.youtube.com/watch?v=SeXg3AX82ig&ab_channel=CodingNepal)
 
-### Application Quality: 15%
 
-- Application user experience is intuitive and easy to navigate.
 
-- Application user interface style is clean and polished.
+## [License](#license)
 
-- Application resembles the mock-up functionality provided in the homework instructions.
+MIT Licence
 
-### Repository Quality: 13%
+Copyright (c) <2023> <Thomas Jack>
 
-- Repository has a unique name.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-- Repository follows best practices for file structure and naming conventions.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-- Repository contains multiple descriptive commit messages.
+## [Badges](#badges)
 
-- Repository contains quality readme file with description, screenshot, and link to deployed application.
+![Static Badge](https://img.shields.io/badge/JavaScript_50%25-orange)
+![Static Badge](https://img.shields.io/badge/HTML_25%25-blue)
+![Static Badge](https://img.shields.io/badge/CSS_25%25-Green)
 
-## Review
+## [Features](#features)
 
-You are required to submit BOTH of the following for review:
+N/A
 
-- The URL of the functional, deployed application.
+## [Contributing](#contributing)
 
-- The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
+N/A
 
----
+## [Tests](#tests)
 
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+N/A
+
+<br>
+
+[Back to top](#top)
