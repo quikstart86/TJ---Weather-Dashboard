@@ -115,7 +115,9 @@ function displaySavedSearches() {
   $savedSearchList.empty();
 
   savedSearches.forEach(function (city) {
-    $savedSearchList.append(`<button class="col-sm-12 mb-2">${city}</button>`);
+    if (city) {
+      $savedSearchList.append(`<button class="col-sm-12 mb-2">${city}</button>`);
+    }
   });
 }
 
