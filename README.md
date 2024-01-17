@@ -44,11 +44,11 @@ Satisfies all of the above acceptance criteria plus the following:
 
 ## [Mock-Up](#mock-up)
 
-![portfolio demo](./assets)
+![portfolio demo](./assets/images/weather%20app%20demo.gif)
 
-[Live View](./assets)
+[Live View](./assets/images/weather%20app%20demo.gif)
 <br>
-[Static View](./assets)
+[Static View](./assets/images/weather%20app%20image.png)
 <br>
 [Deployed Application](https://quikstart86.github.io/TJ-Weather-Dashboard/)
 <br>
